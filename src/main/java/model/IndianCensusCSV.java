@@ -14,5 +14,4 @@ public class IndianCensusCSV {
 		this.areaPerSqKm = areaPerSqKm;
 		this.densityPerSqKm = densityPerSqKm;
 	}
-
 }
