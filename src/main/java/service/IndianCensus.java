@@ -13,7 +13,7 @@ import model.IndianCensusCSV;
 
 public class IndianCensus {
 
-	private List<IndianCensusCSV> censuslist ;
+	private List<IndianCensusCSV> censuslist;
 
 	/**
 	 * @param csvFilePath
@@ -21,7 +21,18 @@ public class IndianCensus {
 	 * @throws CustomCsvException
 	 */
 	public int getSizeOfCsv(String csvFilePath) throws CustomCsvException {
-		censuslist = HelperCSV.readIndianCensusCsv(csvFilePath );
+		censuslist = HelperCSV.readIndianCensusCsv(csvFilePath);
 		return censuslist.size();
+	}
+
+	/**
+	 * @param csvFileParth
+	 * @param stateCodeList 
+	 * @return number of entries in State code csv file
+	 * @throws CustomCsvException
+	 */
+	public int getSizeOfIndianStateCodeCsv(String csvFileParth, Object stateCodeList) throws CustomCsvException {
+		stateCodeList = HelperCSV.readIndianStateCodeCsv(csvFileParth);
+		return stateCodeList.size();
 	}
 }
