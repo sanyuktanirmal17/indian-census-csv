@@ -33,10 +33,9 @@ public class IndianCensusTest {
 		try {
 			@SuppressWarnings("unused")
 			int result = census.getSizeOfCsv("IndiaStateCensusDataIncorrectDelimitor.csv");
-		}
-		catch(CustomCsvException e) {
+		} catch (CustomCsvException e) {
 			Assert.assertEquals(CustomCsvException.ExceptionType.IMPROPER_CSV, e.type);
-		}	
+		}
 	}
 
 }
