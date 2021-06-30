@@ -44,5 +44,34 @@ public class IndianCensusTest {
 		Assert.assertEquals(37, result);
 	}
 
-}
+	@Test
+	public void given_IndianStateCodeCSVFile_WhenIncorrect_ThrowsCustomException() {
+		try {
+			@SuppressWarnings("unused")
+			int result = census.getSizeOfCsv("IndiaStateCodeeee.csv");
+		} catch (CustomCsvException e) {
+			Assert.assertEquals(CustomCsvException.ExceptionType.INCORRECT_FILE, e.type);
+		}
+	}
 
+	@Test
+	public void given_IndianStateCodeCSVFile_WhenTypeIsIncorrect_ThrowsCustomException() {
+		try {
+			@SuppressWarnings("unused")
+			int result = census.getSizeOfCsv("IndiaStateCode.txt");
+		} catch (CustomCsvException e) {
+			Assert.assertEquals(CustomCsvException.ExceptionType.INCORRECT_FILE, e.type);
+		}
+	}
+
+	@Test
+	public void given_IndianStateCodeCSVFile_WhenCorrectButDelimitorIsIncorrect_ThrowsCustomException() {
+		try {
+			@SuppressWarnings("unused")
+			int result = census.getSizeOfCsv("IndiaStateCodeIncorrect.csv");
+		} catch (CustomCsvException e) {
+			Assert.assertEquals(CustomCsvException.ExceptionType.IMPROPER_CSV, e.type);
+		}
+	}
+
+}
