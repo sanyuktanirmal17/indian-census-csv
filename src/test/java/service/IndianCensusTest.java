@@ -38,4 +38,11 @@ public class IndianCensusTest {
 		}
 	}
 
+	@Test
+	public void given_IndianStateCodeCSVFile_ReturnsNumberOfRecords() throws CustomCsvException {
+		int result = census.getSizeOfIndianStateCodeCsv("IndiaStateCode.csv");
+		Assert.assertEquals(37, result);
+	}
+
 }
+

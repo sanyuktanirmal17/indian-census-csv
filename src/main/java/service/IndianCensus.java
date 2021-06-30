@@ -27,7 +27,7 @@ public class IndianCensus {
 
 	/**
 	 * @param csvFileParth
-	 * @param stateCodeList 
+	 * @param stateCodeList
 	 * @return number of entries in State code csv file
 	 * @throws CustomCsvException
 	 */
